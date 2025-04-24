@@ -5,7 +5,7 @@ typedef long long ll;
 
 
 int maxProductOfThree(int arr[],int size) {
-    int max1,max2,max3,index1,index2,index3;
+    int max1,max2,max3,index1,index2;
     max1=arr[0];
     for(int i=1;i<size;i++) {
         if(arr[i]>max1) {
@@ -13,25 +13,21 @@ int maxProductOfThree(int arr[],int size) {
             index1=i;
         }
     }
-    arr[index1]=-99999;
 
     max2=arr[0];
     for(int i=1;i<size;i++) {
-        if(arr[i]>max2) {
+        if(arr[i]>max2 && i!=index1) {
             max2=arr[i];
             index2=i;
         }
     }
-    arr[index2]=-99999;
 
     max3=arr[0];
     for(int i=1;i<size;i++) {
-        if(arr[i]>max3) {
+        if(arr[i]>max3 && i!=index1 && i!= index2) {
             max3=arr[i];
-            index3=i;
         }
     }
-    arr[index3]=-99999;
 
     int result = max1*max2*max3;
     return result;
@@ -44,5 +40,3 @@ int main() {
         cout<< arr[i]<<"  ";
     cout<<"\n"<< ans;
 }
-
-
