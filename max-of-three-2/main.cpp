@@ -1,5 +1,5 @@
 int maxProductOfThree(int arr[],int size) {
-    if (size < 3)
+    if (size < 3) 
         return 0;
     int max1 = INT_MIN, max2 = INT_MIN, max3 = INT_MIN;
     int min1 = INT_MAX, min2 = INT_MAX;
@@ -21,5 +21,6 @@ int maxProductOfThree(int arr[],int size) {
             min2 = arr[i];
         }
     }
-    return max(max1 * max2 * max3, max1 * min1 * min2);
+    ll result= max(max1 * max2 * max3, max1 * min1 * min2);
+    return result;
 }
